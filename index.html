@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap')"/>
+
+    <style>
+        body {
+          font-family: "PT Serif", serif;
+          /* font-family: Arial, sans-serif; */
+          text-align: center;
+          transition: background-color 0.5s ease;
+        }
+        #content {
+          margin-top: 100px;
+          padding: 20px;
+          border: 2px;
+          border-radius: 50px;
+          background-color: lightgrey;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto; 
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         font-style: italic;
+        }
+        #quote {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        #author {
+          font-style: italic;
+        }
+        button {
+          margin-top: 20px;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          color: black;
+          background-color: aquamarine;
+          border-radius: 50px;
+        }
+      </style>
+
+</head>
+<body>
+
+    <div id="content">
+        <p id="quote"></p>
+<p id="author"></p>
+    </div>
+    
+    <button onclick="hello()">click me</button>
+
+
+
+    <script>
+        
+
+var quotes = [
+    {
+      text: "Be yourself; everyone else is already taken.",
+      author: "Oscar Wilde"
+    },
+    {
+      text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+      author: "Albert Einstein"
+    },
+    {
+      text: "A room without books is like a body without a soul.",
+      author: "Marcus Tullius Cicero"
+    },
+    {
+      text: "Be the change that you wish to see in the world.",
+      author: "Mahatma Gandhi"
+    },
+    {
+      text: "Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend.",
+      author: "Albert Camus"
+    },
+     {
+        text:"To live is the rarest thing in the world. Most people exist, that is all.",
+       author:"Oscar Wilde"
+    },
+    {
+        text:"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+        author:"Ralph Waldo Emerson"
+    },
+    {
+        text:"I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+        author:"Maya Angelou"
+    },
+    {
+        text:"Live as if you were to die tomorrow. Learn as if you were to live forever.",
+        author:" Mahatma Gandhi"
+    }
+  ];
+var but=document.getElementsByTagName("button")
+but[0].addEventListener("click",helloo)
+function helloo(){
+    var red="0123456789ABCDEF";
+    var map="#";
+    for(i=0;i<6;i++){
+        map+=red[Math.floor(Math.random() * 16)]
+    }
+    return map;
+    
+}
+
+
+function hello(){
+    var randomIndex = Math.floor(Math.random() * quotes.length);
+    var randomQuote = quotes[randomIndex];
+var c=document.getElementById("quote");
+var d=document.getElementById("author");
+var e=document.getElementById("content");
+
+
+    c.textContent = '"' + randomQuote.text + '"';
+    d.textContent = "- " + randomQuote.author;
+
+    var TextColor = helloo();
+    var BackgroundColor = helloo();
+
+    c.style.color = TextColor;
+    d.style.color = TextColor;
+    e.style.backgroundColor = BackgroundColor;
+  
+}
+    </script>
+</body>
+</html>
